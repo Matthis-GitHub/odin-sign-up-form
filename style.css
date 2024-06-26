@@ -39,3 +39,70 @@ h6 {
   overflow-wrap: break-word;
 }
 /* ------------------------------------------*/
+:root {
+  --odin-color-white: rgb(209, 213, 219);
+  --odin-color-bg: rgb(16, 25, 40);
+  --odin-color-panel: rgb(31, 41, 55);
+  --odin-color-panel-border: rgba(229, 231, 235, 0.05);
+  --odin-color-link: rgb(244, 114, 182);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--odin-color-white);
+  background-color: var(--odin-color-bg);
+}
+
+input {
+  background-color: var(--odin-color-white);
+  border: none;
+  border-radius: 4px;
+}
+
+.container {
+  display: flex;
+}
+
+.image-sidebar {
+  height: 100vh;
+}
+
+.sign-up-form {
+  flex: 1;
+  align-self: center;
+  height: fit-content;
+}
+
+.panel {
+  padding: 16px 48px 24px 48px;
+  background-color: var(--odin-color-panel);
+  border: 1.5px solid var(--odin-color-panel-border);
+  border-radius: 8px;
+}
+
+.form-row {
+  display: flex;
+  gap: 48px;
+  margin-top: 16px;
+}
+
+.form-row div {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row button[type="submit"] {
+  margin: 0px 48px;
+  padding: 6px 32px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--odin-color-white);
+}
+
+.account-notice {
+  margin: 16px 0px 0px 48px;
+}
+
+.color-link {
+  color: var(--odin-color-link);
+}
