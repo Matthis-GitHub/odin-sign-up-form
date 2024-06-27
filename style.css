@@ -39,6 +39,11 @@ h6 {
   overflow-wrap: break-word;
 }
 /* ------------------------------------------*/
+@font-face {
+  font-family: Norse-Bold;
+  src: url("./fonts/Norse-Bold.otf");
+}
+
 :root {
   --odin-color-white: rgb(209, 213, 219);
   --odin-color-bg: rgb(16, 25, 40);
@@ -55,8 +60,22 @@ body {
 
 input {
   background-color: var(--odin-color-white);
-  border: none;
+  border: 2px solid var(--odin-color-white);
   border-radius: 4px;
+  outline: none;
+}
+
+input:focus {
+  border: 2px solid rgb(49, 152, 255);
+}
+
+input[type="password"]:invalid {
+  border: 2px solid red;
+}
+
+h1 {
+  font-family: Norse-Bold, Arial, Helvetica, sans-serif;
+  letter-spacing: 0.1rem;
 }
 
 .container {
@@ -74,10 +93,27 @@ input {
 }
 
 .panel {
+  display: flex;
+  gap: 48px;
+
   padding: 16px 48px 24px 48px;
   background-color: var(--odin-color-panel);
   border: 1.5px solid var(--odin-color-panel-border);
   border-radius: 8px;
+}
+
+.panel-right {
+  height: 258px;
+  display: flex;
+  align-items: center;
+}
+
+.panel-right img {
+  object-fit: contain;
+}
+
+.panel-left {
+  flex: 1;
 }
 
 .form-row {
@@ -91,8 +127,20 @@ input {
   flex-direction: column;
 }
 
+.form-row span {
+  position: relative;
+}
+
+.form-row span::before {
+  font-size: 0.7rem;
+  position: absolute;
+  content: "* Passwords do not match";
+  color: red;
+  padding: 3px 0px;
+}
+
 .form-row button[type="submit"] {
-  margin: 0px 48px;
+  margin: 0px 50px;
   padding: 6px 32px;
   border: none;
   border-radius: 8px;
@@ -100,7 +148,7 @@ input {
 }
 
 .account-notice {
-  margin: 16px 0px 0px 48px;
+  margin: 16px 0px 0px 50px;
 }
 
 .color-link {
